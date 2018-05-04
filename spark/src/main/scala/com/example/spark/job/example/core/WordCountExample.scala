@@ -16,7 +16,6 @@ object WordCountExample extends SparkJob{
   }
 
   override protected def run(args: Array[String]): Unit = {
-
     val rdd = sc.textFile("d:/test/test.txt")
     val result = rdd.flatMap(_.split("\\s+")).map((_,1)).reduceByKey(_+_)
     result.collect().foreach(println(_))
