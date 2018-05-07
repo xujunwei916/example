@@ -6,6 +6,7 @@ import com.google.common.primitives.Longs;
 import org.apache.commons.lang.StringUtils;
 
 
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class X64UnsignedHashFunction {
 
     @SuppressWarnings("deprecation")
     public static String hash(String input) {
-        long hash = hashFunction.hashString(input).asLong();
+        long hash = hashFunction.hashString(input,Charset.forName("utf8")).asLong();
         return StringUtils.reverse(x64(hash));
     }
 

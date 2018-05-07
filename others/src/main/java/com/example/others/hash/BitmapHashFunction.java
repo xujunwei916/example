@@ -3,6 +3,7 @@ package com.example.others.hash;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 
+import java.nio.charset.Charset;
 import java.text.DecimalFormat;
 
 /**
@@ -63,7 +64,7 @@ public class BitmapHashFunction {
 	 */
 	@SuppressWarnings("deprecation")
 	public String[] generateHash(String str) {
-		long hash = hashFunction.hashString(str).asLong();
+		long hash = hashFunction.hashString(str,Charset.forName("utf8")).asLong();
 
 		int bitCode = (int) (hash & hashCodeMod);// 30
 

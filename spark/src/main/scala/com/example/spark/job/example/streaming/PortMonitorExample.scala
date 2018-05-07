@@ -21,6 +21,7 @@ object PortMonitorExample extends SparkStreamingJob {
         sparkConf.setMaster("local[2]")
         sparkConf.setAppName("TestSparkStreaming")
         init(10)
+        println(ssc.sparkContext.getConf.getAll.mkString("\n"))
 
 
     }

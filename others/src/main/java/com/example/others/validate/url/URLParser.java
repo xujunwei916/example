@@ -86,10 +86,10 @@ public class URLParser {
             return domains;
         }
         InternetDomainName domainName = InternetDomainName.from(domain);
-        domains.add(domainName.name());
+        domains.add(domainName.toString());
         while (!domainName.isTopPrivateDomain() && domainName.hasParent()) {
             domainName = domainName.parent();
-            domains.add(domainName.name());
+            domains.add(domainName.toString());
         }
         return domains;
     }
