@@ -4,8 +4,10 @@ import com.google.gson.Gson;
 
 import com.example.others.webmagic.vo.FMView;
 
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -63,6 +65,16 @@ public class SinaWeiboProcesser implements PageProcessor {
         for (Selectable line :selectable.nodes()){
             System.out.println(line.$("em","class").get()+" = "+line.$("em","text").get());
         }
+//        Document doc =Jsoup.parse(htmlStr);
+//        Elements elements =doc.select("span").select("[class='item_ico W_fl']").select("em");
+//        for (Element el:elements){
+//            System.out.println(el.toString());
+//        }
+//        for ()
+//       for (Element element:doc.getAllElements()){
+//           System.out.println(element.t);
+//       }
+//        System.out.println(htmlStr);
 
 
     }
