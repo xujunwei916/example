@@ -38,21 +38,27 @@ public class RedisOption {
 //        for (int i = 0; i <1000000 ; i++) {
 //            jedis.hset("test_hash","f"+i,"v"+i);
 //        }
-        String tmp = "-1";
+        String tmp = "0";
         ScanParams scanParams = new ScanParams();
-        scanParams.count(100);
+        scanParams.count(10000);
         int count =0;
         for (int i = 0; i < 100000; i++) {
 
             ScanResult<Map.Entry<String,String>> scanResult =jedis.hscan("test_hash", tmp,scanParams);
-            tmp=Integer.valueOf(scanResult.getStringCursor())+1+"";
+            tmp=scanResult.getStringCursor();
 //            System.out.println();
 //            for (Map.Entry<String,String> entry :scanResult.getResult()                 ) {
 //                System.out.println(entry);
 //            }
-//            System.out.println("get count = "+scanResult.getResult().size());
-//            System.out.println("tmp = "+tmp);
+            System.out.println("get count = "+scanResult.getResult().size());
+            System.out.println("tmp = "+tmp);
             count+=scanResult.getResult().size();
+            if("0".equals(tmp)){
+                System.out.println(i);
+                break;
+            }
+
+
 
         }
         System.out.println(count);
