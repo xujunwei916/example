@@ -1,5 +1,6 @@
 package com.test
 
+import org.apache.commons.lang.StringUtils
 import org.apache.spark.SparkConf
 
 object TestSys {
@@ -13,5 +14,8 @@ object TestSys {
         val  map = Map("a"->"b")
         val  a:String = ""
         println(Option(a).orElse(Option("aaa")))
+        println("aaa".split(",",2).mkString("---"))
+        println(StringUtils.isNumeric(""))
+        println("12".toInt)
     }
 }

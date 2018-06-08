@@ -34,7 +34,7 @@ public class TestFilter implements Interceptor {
         String timestamp = map.get("timestamp");
         String body = new String(event.getBody());
         String fields[] = body.split("\t");
-        if(fields==null|| fields.length!=3){
+        if(fields==null|| fields.length<3){
             return null;
         }
         String time = fields[0];
@@ -51,6 +51,8 @@ public class TestFilter implements Interceptor {
         SimpleEvent event1 = new SimpleEvent();
         event1.setBody(GSON.toJson(data).getBytes(Charset.forName("utf8")));
         event1.setHeaders(header);
+        System.out.println("header = "+ event1.getHeaders());
+        System.out.println("body = "+ new String(event1.getBody()));
         return event1;
     }
 

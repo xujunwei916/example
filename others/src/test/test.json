@@ -1,0 +1,1772 @@
+{
+  "timestamp" : "2018-05-21T05:50:17.030Z",
+  "clusters" : [ {
+    "name" : "cluster",
+    "displayName" : "Cluster 1",
+    "version" : "CDH5",
+    "fullVersion" : "5.10.2",
+    "services" : [ {
+      "name" : "zookeeper",
+      "type" : "ZOOKEEPER",
+      "config" : {
+        "items" : [ ]
+      },
+      "roles" : [ {
+        "name" : "zookeeper-SERVER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "SERVER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "v3issnhx6z66l9x347x8mlmg",
+            "sensitive" : true
+          }, {
+            "name" : "serverId",
+            "value" : "2",
+            "sensitive" : false
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "zookeeper-SERVER-BASE"
+        }
+      }, {
+        "name" : "zookeeper-SERVER-cd9a1ffc3b16777215e2d9d5f526dcbc",
+        "type" : "SERVER",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "t8mrgbofacd7y3bdi0nfkzsu",
+            "sensitive" : true
+          }, {
+            "name" : "serverId",
+            "value" : "3",
+            "sensitive" : false
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "zookeeper-SERVER-BASE"
+        }
+      }, {
+        "name" : "zookeeper-SERVER-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "SERVER",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "3jy86rcxdsqxbp8oko0eacbj",
+            "sensitive" : true
+          }, {
+            "name" : "serverId",
+            "value" : "1",
+            "sensitive" : false
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "zookeeper-SERVER-BASE"
+        }
+      } ],
+      "displayName" : "ZooKeeper",
+      "roleConfigGroups" : [ {
+        "name" : "zookeeper-SERVER-BASE",
+        "displayName" : "Server Default Group",
+        "roleType" : "SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "zookeeper"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "maxSessionTimeout",
+            "value" : "60000",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "hdfs",
+      "type" : "HDFS",
+      "config" : {
+        "items" : [ {
+          "name" : "dfs_ha_fencing_cloudera_manager_secret_key",
+          "value" : "U1nQujeOp3tU6dBUa0Q5XmHvk5b42x",
+          "sensitive" : true
+        }, {
+          "name" : "fc_authorization_secret_key",
+          "value" : "5TRMvAbjRuV7t9zvYVja4KcEldNVIL",
+          "sensitive" : true
+        }, {
+          "name" : "http_auth_signature_secret",
+          "value" : "WWEuSYTCbp7vAVk8Wug3R5whwqNMYz",
+          "sensitive" : true
+        }, {
+          "name" : "rm_dirty",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "hdfs-BALANCER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "BALANCER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-BALANCER-BASE"
+        }
+      }, {
+        "name" : "hdfs-DATANODE-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "DATANODE",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "3modwa2vscqd5f82x4jg6dzpt",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-DATANODE-1"
+        }
+      }, {
+        "name" : "hdfs-DATANODE-cd9a1ffc3b16777215e2d9d5f526dcbc",
+        "type" : "DATANODE",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "10zhlsrkfb174a82ktyxknuvl",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-DATANODE-BASE"
+        }
+      }, {
+        "name" : "hdfs-DATANODE-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "DATANODE",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "1y7yr4ykjiomybavblw4gh6gb",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-DATANODE-2"
+        }
+      }, {
+        "name" : "hdfs-GATEWAY-35e80af7d0799f64532bc68d476f084a",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hdfs-NAMENODE-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "NAMENODE",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "namenode_id",
+            "value" : "23",
+            "sensitive" : false
+          }, {
+            "name" : "role_jceks_password",
+            "value" : "9fw2qrczbfcsidn29d9tb4l9k",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-NAMENODE-BASE"
+        }
+      }, {
+        "name" : "hdfs-SECONDARYNAMENODE-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "SECONDARYNAMENODE",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "4thwq6h2snqd1i3vj0z24cum9",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-SECONDARYNAMENODE-BASE"
+        }
+      } ],
+      "displayName" : "HDFS",
+      "roleConfigGroups" : [ {
+        "name" : "hdfs-BALANCER-BASE",
+        "displayName" : "Balancer Default Group",
+        "roleType" : "BALANCER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "balancer_java_heapsize",
+            "value" : "218103808",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-DATANODE-1",
+        "displayName" : "DataNode Group 1",
+        "roleType" : "DATANODE",
+        "base" : false,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "datanode_java_heapsize",
+            "value" : "218103808",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_data_dir_list",
+            "value" : "/dfs/dn",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_du_reserved",
+            "value" : "5366087680",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_max_locked_memory",
+            "value" : "283115520",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-DATANODE-2",
+        "displayName" : "DataNode Group 2",
+        "roleType" : "DATANODE",
+        "base" : false,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "datanode_java_heapsize",
+            "value" : "546308096",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_data_dir_list",
+            "value" : "/dfs/dn",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_du_reserved",
+            "value" : "5366087680",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_max_locked_memory",
+            "value" : "709885952",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-DATANODE-BASE",
+        "displayName" : "DataNode Default Group",
+        "roleType" : "DATANODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "datanode_java_heapsize",
+            "value" : "547356672",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_data_dir_list",
+            "value" : "/dfs/dn",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_du_reserved",
+            "value" : "5366087680",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_max_locked_memory",
+            "value" : "711983104",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-FAILOVERCONTROLLER-BASE",
+        "displayName" : "Failover Controller Default Group",
+        "roleType" : "FAILOVERCONTROLLER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hdfs-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "dfs_client_use_trash",
+            "value" : "true",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-HTTPFS-BASE",
+        "displayName" : "HttpFS Default Group",
+        "roleType" : "HTTPFS",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hdfs-JOURNALNODE-BASE",
+        "displayName" : "JournalNode Default Group",
+        "roleType" : "JOURNALNODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hdfs-NAMENODE-BASE",
+        "displayName" : "NameNode Default Group",
+        "roleType" : "NAMENODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "dfs_name_dir_list",
+            "value" : "/dfs/nn",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_namenode_servicerpc_address",
+            "value" : "8022",
+            "sensitive" : false
+          }, {
+            "name" : "namenode_java_heapsize",
+            "value" : "218103808",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-NFSGATEWAY-BASE",
+        "displayName" : "NFS Gateway Default Group",
+        "roleType" : "NFSGATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hdfs-SECONDARYNAMENODE-BASE",
+        "displayName" : "SecondaryNameNode Default Group",
+        "roleType" : "SECONDARYNAMENODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "fs_checkpoint_dir_list",
+            "value" : "/dfs/snn",
+            "sensitive" : false
+          }, {
+            "name" : "secondary_namenode_java_heapsize",
+            "value" : "218103808",
+            "sensitive" : false
+          } ]
+        }
+      } ],
+      "replicationSchedules" : [ ],
+      "snapshotPolicies" : [ ]
+    }, {
+      "name" : "yarn",
+      "type" : "YARN",
+      "config" : {
+        "items" : [ {
+          "name" : "hdfs_service",
+          "value" : "hdfs",
+          "sensitive" : false
+        }, {
+          "name" : "rm_dirty",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "zk_authorization_secret_key",
+          "value" : "MLbMC7AK6H2JLvQgPnoKLSHkLL3n97",
+          "sensitive" : true
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "yarn-GATEWAY-35e80af7d0799f64532bc68d476f084a",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "yarn-JOBHISTORY-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "JOBHISTORY",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "8np2fzbej7mz9bp5n3xrh9wrw",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-JOBHISTORY-BASE"
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "NODEMANAGER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "3la82vclitpd0fssr1hxswrjx",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-NODEMANAGER-BASE"
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-cd9a1ffc3b16777215e2d9d5f526dcbc",
+        "type" : "NODEMANAGER",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "9dq3etcevb2yw3u3n9a2mc1bm",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-NODEMANAGER-BASE"
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "NODEMANAGER",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "cydfo6f7s9v1n1r4tpnktco2x",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-NODEMANAGER-BASE"
+        }
+      }, {
+        "name" : "yarn-RESOURCEMANAGER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "RESOURCEMANAGER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "rm_id",
+            "value" : "37",
+            "sensitive" : false
+          }, {
+            "name" : "role_jceks_password",
+            "value" : "70puxbudsipxl60tewkorp3ef",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-RESOURCEMANAGER-BASE"
+        }
+      } ],
+      "displayName" : "YARN (MR2 Included)",
+      "roleConfigGroups" : [ {
+        "name" : "yarn-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "mapred_reduce_tasks",
+            "value" : "6",
+            "sensitive" : false
+          }, {
+            "name" : "mapred_submit_replication",
+            "value" : "1",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "yarn-JOBHISTORY-BASE",
+        "displayName" : "JobHistory Server Default Group",
+        "roleType" : "JOBHISTORY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "mr2_jobhistory_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-BASE",
+        "displayName" : "NodeManager Default Group",
+        "roleType" : "NODEMANAGER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "node_manager_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_heartbeat_interval_ms",
+            "value" : "100",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_local_dirs",
+            "value" : "/yarn/nm",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_log_dirs",
+            "value" : "/yarn/container-logs",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_resource_cpu_vcores",
+            "value" : "4",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_resource_memory_mb",
+            "value" : "2048",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "yarn-RESOURCEMANAGER-BASE",
+        "displayName" : "ResourceManager Default Group",
+        "roleType" : "RESOURCEMANAGER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "resource_manager_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_scheduler_maximum_allocation_mb",
+            "value" : "2048",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_scheduler_maximum_allocation_vcores",
+            "value" : "4",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "hbase",
+      "type" : "HBASE",
+      "config" : {
+        "items" : [ {
+          "name" : "hdfs_service",
+          "value" : "hdfs",
+          "sensitive" : false
+        }, {
+          "name" : "rm_dirty",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "hbase-HBASERESTSERVER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "HBASERESTSERVER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "80y63wi1ive386fo3qn8ldut1",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-HBASERESTSERVER-BASE"
+        }
+      }, {
+        "name" : "hbase-HBASETHRIFTSERVER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "HBASETHRIFTSERVER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "72whm0qcchpdl4qpydm0b312m",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-HBASETHRIFTSERVER-BASE"
+        }
+      }, {
+        "name" : "hbase-HBASETHRIFTSERVER-cd9a1ffc3b16777215e2d9d5f526dcbc",
+        "type" : "HBASETHRIFTSERVER",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "623w1xgtwa2tyrh71jo0kulf5",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-HBASETHRIFTSERVER-BASE"
+        }
+      }, {
+        "name" : "hbase-HBASETHRIFTSERVER-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "HBASETHRIFTSERVER",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "c5audq94ntjnlqf01oh26pn3g",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-HBASETHRIFTSERVER-BASE"
+        }
+      }, {
+        "name" : "hbase-MASTER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "MASTER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "aqdux33xie7z1ek03u5fx5j9x",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-MASTER-BASE"
+        }
+      }, {
+        "name" : "hbase-REGIONSERVER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "REGIONSERVER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "391ije38o5thyvpf54qi21o57",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-REGIONSERVER-BASE"
+        }
+      }, {
+        "name" : "hbase-REGIONSERVER-cd9a1ffc3b16777215e2d9d5f526dcbc",
+        "type" : "REGIONSERVER",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "djlw2pz7le9eijjc8uo6ktk0y",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-REGIONSERVER-BASE"
+        }
+      }, {
+        "name" : "hbase-REGIONSERVER-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "REGIONSERVER",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "dhlnw5gbm3prcs6qbparci4no",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hbase-REGIONSERVER-BASE"
+        }
+      } ],
+      "displayName" : "HBase",
+      "roleConfigGroups" : [ {
+        "name" : "hbase-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hbase"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hbase-HBASERESTSERVER-BASE",
+        "displayName" : "HBase REST Server Default Group",
+        "roleType" : "HBASERESTSERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hbase"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hbase_restserver_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hbase-HBASETHRIFTSERVER-BASE",
+        "displayName" : "HBase Thrift Server Default Group",
+        "roleType" : "HBASETHRIFTSERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hbase"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hbase_thriftserver_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hbase-MASTER-BASE",
+        "displayName" : "Master Default Group",
+        "roleType" : "MASTER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hbase"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hbase_master_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hbase-REGIONSERVER-BASE",
+        "displayName" : "RegionServer Default Group",
+        "roleType" : "REGIONSERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hbase"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hbase_bucketcache_size",
+            "value" : "1",
+            "sensitive" : false
+          }, {
+            "name" : "hbase_regionserver_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      } ],
+      "snapshotPolicies" : [ ]
+    }, {
+      "name" : "hive",
+      "type" : "HIVE",
+      "config" : {
+        "items" : [ {
+          "name" : "hbase_service",
+          "value" : "hbase",
+          "sensitive" : false
+        }, {
+          "name" : "hive_metastore_database_host",
+          "value" : "cluster115",
+          "sensitive" : false
+        }, {
+          "name" : "hive_metastore_database_name",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "hive_metastore_database_password",
+          "value" : "hadoop",
+          "sensitive" : true
+        }, {
+          "name" : "hive_metastore_database_user",
+          "value" : "hadoop",
+          "sensitive" : false
+        }, {
+          "name" : "mapreduce_yarn_service",
+          "value" : "yarn",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "hive-GATEWAY-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hive-GATEWAY-cd9a1ffc3b16777215e2d9d5f526dcbc",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hive-GATEWAY-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hive-HIVEMETASTORE-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "HIVEMETASTORE",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "eu5qd6xhi295j63uvx00kp6rb",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-HIVEMETASTORE-BASE"
+        }
+      }, {
+        "name" : "hive-HIVESERVER2-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "HIVESERVER2",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "70tr2e7buqynvcqxyntoax27r",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-HIVESERVER2-BASE"
+        }
+      }, {
+        "name" : "hive-WEBHCAT-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "WEBHCAT",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hive_webhcat_secret_key",
+            "value" : "QRKyuA08sEEqtk3ODsuz23m3gcU43v",
+            "sensitive" : true
+          }, {
+            "name" : "role_jceks_password",
+            "value" : "ejna7k2a6shqkcpobkw50dgnm",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-WEBHCAT-BASE"
+        }
+      } ],
+      "displayName" : "Hive",
+      "roleConfigGroups" : [ {
+        "name" : "hive-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hive-HIVEMETASTORE-BASE",
+        "displayName" : "Hive Metastore Server Default Group",
+        "roleType" : "HIVEMETASTORE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hive_metastore_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hive-HIVESERVER2-BASE",
+        "displayName" : "HiveServer2 Default Group",
+        "roleType" : "HIVESERVER2",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hiveserver2_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_driver_memory",
+            "value" : "966367641",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_executor_cores",
+            "value" : "4",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_executor_memory",
+            "value" : "912680550",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_yarn_driver_memory_overhead",
+            "value" : "102",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_yarn_executor_memory_overhead",
+            "value" : "153",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hive-WEBHCAT-BASE",
+        "displayName" : "WebHCat Server Default Group",
+        "roleType" : "WEBHCAT",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hive_webhcat_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      } ],
+      "replicationSchedules" : [ ]
+    }, {
+      "name" : "oozie",
+      "type" : "OOZIE",
+      "config" : {
+        "items" : [ {
+          "name" : "hive_service",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "mapreduce_yarn_service",
+          "value" : "yarn",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "oozie-OOZIE_SERVER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "OOZIE_SERVER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "56qtbjyj3t0vgyi47vxpm6ji8",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "oozie-OOZIE_SERVER-BASE"
+        }
+      } ],
+      "displayName" : "Oozie",
+      "roleConfigGroups" : [ {
+        "name" : "oozie-OOZIE_SERVER-BASE",
+        "displayName" : "Oozie Server Default Group",
+        "roleType" : "OOZIE_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "oozie"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "oozie_database_host",
+            "value" : "cluster115",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_database_password",
+            "value" : "hadoop",
+            "sensitive" : true
+          }, {
+            "name" : "oozie_database_type",
+            "value" : "mysql",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_database_user",
+            "value" : "hadoop",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "hue",
+      "type" : "HUE",
+      "config" : {
+        "items" : [ {
+          "name" : "database_host",
+          "value" : "cluster115",
+          "sensitive" : false
+        }, {
+          "name" : "database_password",
+          "value" : "hadoop",
+          "sensitive" : true
+        }, {
+          "name" : "database_type",
+          "value" : "mysql",
+          "sensitive" : false
+        }, {
+          "name" : "database_user",
+          "value" : "hadoop",
+          "sensitive" : false
+        }, {
+          "name" : "hbase_service",
+          "value" : "hbase",
+          "sensitive" : false
+        }, {
+          "name" : "hive_service",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "hue_hbase_thrift",
+          "value" : "hbase-HBASETHRIFTSERVER-b0fc5f71df2e6185b9676c6b13e22e2c",
+          "sensitive" : false
+        }, {
+          "name" : "hue_webhdfs",
+          "value" : "hdfs-NAMENODE-b0fc5f71df2e6185b9676c6b13e22e2c",
+          "sensitive" : false
+        }, {
+          "name" : "oozie_service",
+          "value" : "oozie",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "hue-HUE_SERVER-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "HUE_SERVER",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "dvrclb62xoxbtaidk7mctb3vo",
+            "sensitive" : true
+          }, {
+            "name" : "secret_key",
+            "value" : "l2TE0RtMeJGNB6dx2b0k7ffqSDhP0s",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hue-HUE_SERVER-BASE"
+        }
+      } ],
+      "displayName" : "Hue",
+      "roleConfigGroups" : [ {
+        "name" : "hue-HUE_LOAD_BALANCER-BASE",
+        "displayName" : "Load Balancer Default Group",
+        "roleType" : "HUE_LOAD_BALANCER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hue"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hue-HUE_SERVER-BASE",
+        "displayName" : "Hue Server Default Group",
+        "roleType" : "HUE_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hue"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "hue-KT_RENEWER-BASE",
+        "displayName" : "Kerberos Ticket Renewer Default Group",
+        "roleType" : "KT_RENEWER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hue"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      } ]
+    }, {
+      "name" : "spark2_on_yarn",
+      "type" : "SPARK2_ON_YARN",
+      "config" : {
+        "items" : [ {
+          "name" : "hive_service",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "yarn_service",
+          "value" : "yarn",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "spar1957cecc-SPARK2_YARN_HISTORY_SERVER-cd9a1ffc3b16777215e2d9d5",
+        "type" : "SPARK2_YARN_HISTORY_SERVER",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "cg81zbda5r45kardwmko4edm0",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark2_on_yarn-SPARK2_YARN_HISTORY_SERVER-BASE"
+        }
+      }, {
+        "name" : "spark2_on_yarn-GATEWAY-35e80af7d0799f64532bc68d476f084a",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark2_on_yarn-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "spark2_on_yarn-GATEWAY-b0fc5f71df2e6185b9676c6b13e22e2c",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark2_on_yarn-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "spark2_on_yarn-GATEWAY-cd9a1ffc3b16777215e2d9d5f526dcbc",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark2_on_yarn-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "spark2_on_yarn-GATEWAY-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark2_on_yarn-GATEWAY-BASE"
+        }
+      } ],
+      "displayName" : "Spark 2",
+      "roleConfigGroups" : [ {
+        "name" : "spark2_on_yarn-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "spark2_on_yarn"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "spark2_on_yarn-SPARK2_YARN_HISTORY_SERVER-BASE",
+        "displayName" : "History Server Default Group",
+        "roleType" : "SPARK2_YARN_HISTORY_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "spark2_on_yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "history_server_max_heapsize",
+            "value" : "67108864",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "oozie2",
+      "type" : "OOZIE",
+      "config" : {
+        "items" : [ {
+          "name" : "hive_service",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "mapreduce_yarn_service",
+          "value" : "yarn",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "oozie2-OOZIE_SERVER-ce6cc59951cae834b36a40b25dece7c0",
+        "type" : "OOZIE_SERVER",
+        "hostRef" : {
+          "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "8jt0ntzvf13oieynk45m0sxsv",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "oozie2-OOZIE_SERVER-BASE"
+        }
+      } ],
+      "displayName" : "Oozie-2",
+      "roleConfigGroups" : [ {
+        "name" : "oozie2-OOZIE_SERVER-BASE",
+        "displayName" : "Oozie Server Default Group",
+        "roleType" : "OOZIE_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "oozie2"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "oozie_database_host",
+            "value" : "cluster115",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_database_password",
+            "value" : "hadoop",
+            "sensitive" : true
+          }, {
+            "name" : "oozie_database_type",
+            "value" : "mysql",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_database_user",
+            "value" : "hadoop",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_java_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    } ],
+    "parcels" : [ {
+      "product" : "CDH",
+      "version" : "5.10.2-1.cdh5.10.2.p0.5",
+      "stage" : "DISTRIBUTED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    }, {
+      "product" : "SPARK2",
+      "version" : "2.2.0.cloudera1-1.cdh5.12.0.p0.142354",
+      "stage" : "DISTRIBUTED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    }, {
+      "product" : "CDH",
+      "version" : "5.10.2-1.cdh5.10.2.p0.5",
+      "stage" : "ACTIVATED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    }, {
+      "product" : "SPARK2",
+      "version" : "2.2.0.cloudera1-1.cdh5.12.0.p0.142354",
+      "stage" : "ACTIVATED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    } ],
+    "uuid" : "3c067d88-ae41-4ac8-a776-135959aefeda"
+  } ],
+  "hosts" : [ {
+    "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06",
+    "ipAddress" : "172.17.18.115",
+    "hostname" : "cluster115",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "1a765319-f0c3-4482-a675-8b9889aea113",
+    "ipAddress" : "172.17.18.137",
+    "hostname" : "cluster137",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "eb93e6a8-f4b3-464f-afa1-1d8b53962d9c",
+    "ipAddress" : "172.17.18.146",
+    "hostname" : "cluster146",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "b9c4b811-7d23-46cc-aad9-c414a302031a",
+    "ipAddress" : "172.17.18.161",
+    "hostname" : "cluster161",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  } ],
+  "users" : [ {
+    "name" : "__cloudera_internal_user__mgmt-ACTIVITYMONITOR-35e80af7d0799f64532bc68d476f084a",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "2d202cb0bef9a5fe6f30f3b6800eaecc3da488bd01b1371061712e33dd07d562",
+    "pwSalt" : -798761980345931569,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-EVENTSERVER-35e80af7d0799f64532bc68d476f084a",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "7dea505f6866bea996f6ae6391700450f73ac820131c71a1b6aa2ab199f56658",
+    "pwSalt" : 8233048578691288833,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-HOSTMONITOR-35e80af7d0799f64532bc68d476f084a",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "d71ab308c2925f04c871948430c4123498f1c0f428875f0ddcb9d9b46557c140",
+    "pwSalt" : 1663374971676386891,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-SERVICEMONITOR-35e80af7d0799f64532bc68d476f084a",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "6244df9e1c86099240d94a0fcee3ac43f0f6bbcafd5f3d4e193efe8650ce5dfc",
+    "pwSalt" : 4520108216311512210,
+    "pwLogin" : true
+  }, {
+    "name" : "admin",
+    "roles" : [ "ROLE_ADMIN" ],
+    "pwHash" : "9e692f6fde20fc2dd548f136507ef96aa34e89f8140f5a545776c3e4ed7c7413",
+    "pwSalt" : -5342066986576001478,
+    "pwLogin" : true
+  }, {
+    "name" : "cdh",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "e0c6498c21e600973019f1dd4312019e3fa2b75dee8e9c09b33c92dcef572b95",
+    "pwSalt" : -6933104332790678047,
+    "pwLogin" : true
+  }, {
+    "name" : "test",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "fab9ed464d81284d6cd7e6580973b91ba91ae760252807590d06b904ca0218db",
+    "pwSalt" : -5712033341438797772,
+    "pwLogin" : true
+  } ],
+  "versionInfo" : {
+    "version" : "5.10.2",
+    "buildUser" : "jenkins",
+    "buildTimestamp" : "20170626-1942",
+    "gitHash" : "15f547c8802e02d59901ee3fe1c5c5733eab0227",
+    "snapshot" : false
+  },
+  "managementService" : {
+    "name" : "mgmt",
+    "type" : "MGMT",
+    "config" : {
+      "items" : [ ]
+    },
+    "roles" : [ {
+      "name" : "mgmt-ALERTPUBLISHER-35e80af7d0799f64532bc68d476f084a",
+      "type" : "ALERTPUBLISHER",
+      "hostRef" : {
+        "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "2pp68dfnm6x8f5y2oo48mvh2t",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-ALERTPUBLISHER-BASE"
+      }
+    }, {
+      "name" : "mgmt-EVENTSERVER-35e80af7d0799f64532bc68d476f084a",
+      "type" : "EVENTSERVER",
+      "hostRef" : {
+        "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "8hl3m5wtb02qmi4f570lsxn5f",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-EVENTSERVER-BASE"
+      }
+    }, {
+      "name" : "mgmt-HOSTMONITOR-35e80af7d0799f64532bc68d476f084a",
+      "type" : "HOSTMONITOR",
+      "hostRef" : {
+        "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "6827xw6twgft7smkn5m961mgr",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-HOSTMONITOR-BASE"
+      }
+    }, {
+      "name" : "mgmt-SERVICEMONITOR-35e80af7d0799f64532bc68d476f084a",
+      "type" : "SERVICEMONITOR",
+      "hostRef" : {
+        "hostId" : "1030828d-3ccd-43d1-be04-69a14c492d06"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "8lcgbvj2nd0q7cc1brxwrc7iy",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-SERVICEMONITOR-BASE"
+      }
+    } ],
+    "displayName" : "Cloudera Management Service",
+    "roleConfigGroups" : [ {
+      "name" : "mgmt-ACTIVITYMONITOR-BASE",
+      "displayName" : "Activity Monitor Default Group",
+      "roleType" : "ACTIVITYMONITOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ ]
+      }
+    }, {
+      "name" : "mgmt-ALERTPUBLISHER-BASE",
+      "displayName" : "Alert Publisher Default Group",
+      "roleType" : "ALERTPUBLISHER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "alert_mailserver_recipients",
+          "value" : "gaox@2345.com",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-EVENTSERVER-BASE",
+      "displayName" : "Event Server Default Group",
+      "roleType" : "EVENTSERVER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "event_server_heapsize",
+          "value" : "639631360",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-HOSTMONITOR-BASE",
+      "displayName" : "Host Monitor Default Group",
+      "roleType" : "HOSTMONITOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "firehose_heapsize",
+          "value" : "639631360",
+          "sensitive" : false
+        }, {
+          "name" : "firehose_non_java_memory_bytes",
+          "value" : "831520768",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-NAVIGATOR-BASE",
+      "displayName" : "Navigator Audit Server Default Group",
+      "roleType" : "NAVIGATOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ ]
+      }
+    }, {
+      "name" : "mgmt-NAVIGATORMETASERVER-BASE",
+      "displayName" : "Navigator Metadata Server Default Group",
+      "roleType" : "NAVIGATORMETASERVER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ ]
+      }
+    }, {
+      "name" : "mgmt-REPORTSMANAGER-BASE",
+      "displayName" : "Reports Manager Default Group",
+      "roleType" : "REPORTSMANAGER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ ]
+      }
+    }, {
+      "name" : "mgmt-SERVICEMONITOR-BASE",
+      "displayName" : "Service Monitor Default Group",
+      "roleType" : "SERVICEMONITOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "firehose_heapsize",
+          "value" : "639631360",
+          "sensitive" : false
+        }, {
+          "name" : "firehose_non_java_memory_bytes",
+          "value" : "831520768",
+          "sensitive" : false
+        } ]
+      }
+    } ]
+  },
+  "managerSettings" : {
+    "items" : [ {
+      "name" : "CLUSTER_STATS_START",
+      "value" : "10/25/2012 9:30",
+      "sensitive" : false
+    }, {
+      "name" : "LOCALE",
+      "value" : "zh_CN",
+      "sensitive" : false
+    }, {
+      "name" : "PUBLIC_CLOUD_STATUS",
+      "value" : "NOT_ON_PUBLIC_CLOUD",
+      "sensitive" : false
+    }, {
+      "name" : "REMOTE_PARCEL_REPO_URLS",
+      "value" : "https://archive.cloudera.com/cdh5/parcels/{latest_supported}/,https://archive.cloudera.com/cdh4/parcels/latest/,https://archive.cloudera.com/impala/parcels/latest/,https://archive.cloudera.com/search/parcels/latest/,https://archive.cloudera.com/accumulo/parcels/1.4/,https://archive.cloudera.com/accumulo-c5/parcels/latest/,https://archive.cloudera.com/kafka/parcels/latest/,https://archive.cloudera.com/navigator-keytrustee5/parcels/latest/,https://archive.cloudera.com/spark/parcels/latest/,https://archive.cloudera.com/sqoop-connectors/parcels/latest/,http://archive.cloudera.com/spark2/parcels/2.2.0.cloudera1/",
+      "sensitive" : false
+    } ]
+  },
+  "allHostsConfig" : {
+    "items" : [ ]
+  },
+  "peers" : [ ],
+  "hostTemplates" : {
+    "items" : [ ]
+  }
+}

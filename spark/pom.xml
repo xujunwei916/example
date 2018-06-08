@@ -13,12 +13,10 @@
 
     <properties>
 
-        <spark.version>2.1.0</spark.version>
+        <spark.version>2.3.0</spark.version>
     </properties>
 
     <dependencies>
-
-
 
         <dependency>
             <groupId>junit</groupId>
@@ -39,6 +37,11 @@
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
 
@@ -69,7 +72,58 @@
             <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-core</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>dl4j-spark_2.11</artifactId>
+            <version>0.9.1_spark_2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>dl4j-spark-ml_2.11</artifactId>
+            <version>0.9.1_spark_2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-native-platform</artifactId>
+            <version>0.9.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.datavec</groupId>
+            <artifactId>datavec-api</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-cuda-8.0</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm</groupId>
+            <artifactId>gpu-enabler_2.11</artifactId>
+            <version>2.0.0</version>
+            <scope>system</scope>
+            <systemPath>E:/git/xjw/example/spark/lib/gpu-enabler_2.11-2.0.0.jar</systemPath>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.ibm</groupId>-->
+            <!--<artifactId>original-gpu-enabler_2.11</artifactId>-->
+            <!--<version>2.0.0</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>E:/git/xjw/example/spark/lib/original-gpu-enabler_2.11-2.0.0.jar</systemPath>-->
+        <!--</dependency>-->
+
+
+
     </dependencies>
-
-
 </project>

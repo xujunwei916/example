@@ -12,6 +12,7 @@
     <artifactId>others</artifactId>
 
 
+
     <dependencies>
 
 
@@ -75,6 +76,14 @@
             <version>5.1.6</version>
         </dependency>
 
+
+
+        <!-- https://mvnrepository.com/artifact/eu.bitwalker/UserAgentUtils -->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.21</version>
+        </dependency>
     </dependencies>
 
 
