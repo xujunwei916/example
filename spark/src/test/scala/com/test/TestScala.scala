@@ -2,6 +2,8 @@ package com.test
 
 import shapeless.ops.zipper.First
 
+import scala.collection.mutable
+
 object TestScala {
 
 
@@ -21,12 +23,24 @@ object TestScala {
 
     def main(args: Array[String]): Unit = {
 
-        println(f1(_ * 6))
+//        println(f1(_ * 6))
+//
+//        println(f2(5)(7))
+//        val f= f3(8)(_)
+//        println(f(7))
+//        println(f(6))
 
-        println(f2(5)(7))
-        val f= f3(8)(_)
-        println(f(7))
-        println(f(6))
+
+//        val mapResult = new mutable.HashMap[String, String]
+//        val s = mapResult.getOrElseUpdate("aaaa","bbbbbb")
+//        println(mapResult)
+
+//        val a= Array(1,2,3,4,5,6,7,10,8,9)
+//        val b = a.take(6).toSet[Int]
+//        println(a.mkString(","))
+//        println("^\\d{1,2}$".r.findFirstIn(date).isEmpty)
+        val a =Map("a"->1,"b"->2)
+        println(a.pu)
 
 
     }

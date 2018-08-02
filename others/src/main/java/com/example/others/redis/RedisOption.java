@@ -35,12 +35,25 @@ public class RedisOption {
     }
 
     public static void main(String[] args) {
-//        Jedis jedis = getConnect("172.17.20.137", 6379, "123456");
+
+
 //        setData(jedis,"test_set","sss");
 //        jedis.set("test_set2","ssssss","NX");
-//        for (int i = 0; i <100000 ; i++) {
-//                jedis.lpush("test_list","value"+i);
-//        }
+        for (int a =0;a<  1000;a++) {
+            final  int b = a;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Jedis jedis = getConnect("172.17.20.119", 6379, "rc_redis");
+                    for (int i = 0; i <100000 ; i++) {
+                        jedis.set("test_list"+b,"value"+i);
+                    }
+                    jedis.close();
+                }
+            }).start();
+        }
+
+
 //        for (int i = 0; i <1000000 ; i++) {
 //            jedis.hset("test_hash","f"+i,"v"+i);
 //        }
@@ -68,22 +81,22 @@ public class RedisOption {
 //
 //        }
 //        System.out.println(count);
-        JedisPoolConfig poolConfig = new JedisPoolConfig();
-        // 最大连接数
-        poolConfig.setMaxTotal(1);
-        // 最大空闲数
-        poolConfig.setMaxIdle(1);
-        // 最大允许等待时间，如果超过这个时间还未获取到连接，则会报JedisException异常：
-        // Could not get a resource from the pool
-        poolConfig.setMaxWaitMillis(1000);
-        Set<HostAndPort> nodes = new LinkedHashSet<HostAndPort>();
-        nodes.add(new HostAndPort("172.17.20.137", 6379));
-        nodes.add(new HostAndPort("172.17.20.137", 6380));
-        nodes.add(new HostAndPort("172.17.20.137", 6381));
-        nodes.add(new HostAndPort("172.17.20.137", 6382));
-        nodes.add(new HostAndPort("172.17.20.137", 6383));
-        nodes.add(new HostAndPort("172.17.20.137", 6384));
-        JedisCluster cluster = new JedisCluster(nodes, 1000,1000,1,"123456",poolConfig);
+//        JedisPoolConfig poolConfig = new JedisPoolConfig();
+//        // 最大连接数
+//        poolConfig.setMaxTotal(1);
+//        // 最大空闲数
+//        poolConfig.setMaxIdle(1);
+//        // 最大允许等待时间，如果超过这个时间还未获取到连接，则会报JedisException异常：
+//        // Could not get a resource from the pool
+//        poolConfig.setMaxWaitMillis(1000);
+//        Set<HostAndPort> nodes = new LinkedHashSet<HostAndPort>();
+//        nodes.add(new HostAndPort("172.17.20.137", 6379));
+//        nodes.add(new HostAndPort("172.17.20.137", 6380));
+//        nodes.add(new HostAndPort("172.17.20.137", 6381));
+//        nodes.add(new HostAndPort("172.17.20.137", 6382));
+//        nodes.add(new HostAndPort("172.17.20.137", 6383));
+//        nodes.add(new HostAndPort("172.17.20.137", 6384));
+//        JedisCluster cluster = new JedisCluster(nodes, 1000,1000,1,"123456",poolConfig);
 
 
 //        System.out.println(cluster.get("aaa"));
@@ -95,10 +108,10 @@ public class RedisOption {
 //            cluster.hincrBy("test_incr","abc",1);
 //
 //        }
-        try {
-            cluster.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            cluster.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

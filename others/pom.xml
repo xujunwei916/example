@@ -12,9 +12,7 @@
     <artifactId>others</artifactId>
 
 
-
     <dependencies>
-
 
 
         <!-- 爬虫框架 使用简单-->
@@ -34,7 +32,6 @@
             <version>2.2.4</version>
             <scope>compile</scope>
         </dependency>
-
 
 
         <dependency>
@@ -69,7 +66,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>org.ansj</groupId>
             <artifactId>ansj_seg</artifactId>
@@ -77,12 +73,33 @@
         </dependency>
 
 
-
         <!-- https://mvnrepository.com/artifact/eu.bitwalker/UserAgentUtils -->
         <dependency>
             <groupId>eu.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
             <version>1.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.roaringbitmap</groupId>
+            <artifactId>RoaringBitmap</artifactId>
+            <version>0.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>guess</groupId>
+            <artifactId>com.guess2345</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
