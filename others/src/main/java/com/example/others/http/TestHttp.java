@@ -23,18 +23,18 @@ public class TestHttp {
     }.getType();
 
     public static void main(String[] args) throws Exception {
-        String dir = "D:\\test\\zhushou_2018_07_08\\opt\\data\\appNewLogs\\2018\\2018-07-08\\zhushou";
-        String filenames []= new File(dir).list();
-        String outputDir="d:\\test\\result_tmp";
-        String errorDir ="d:\\test\\result_errer";
-        for (String filename:filenames
-             ) {
-            System.out.println(filename);
-            TestPost(dir+"\\"+filename,outputDir+"\\"+filename,errorDir+"\\"+filename);
-        }
+//        String dir = "D:\\test\\zhushou_2018_07_08\\opt\\data\\appNewLogs\\2018\\2018-07-08\\zhushou";
+//        String filenames []= new File(dir).list();
+//        String outputDir="d:\\test\\result_tmp";
+//        String errorDir ="d:\\test\\result_errer";
+//        for (String filename:filenames
+//             ) {
+//            System.out.println(filename);
+//            TestPost(dir+"\\"+filename,outputDir+"\\"+filename,errorDir+"\\"+filename);
+//        }
 
 
-
+        TestPost("D:\\test\\test\\08_09.txt","D:\\test\\test\\08_09_result.txt","D:\\test\\test\\08_09_ERROR.txt");
 
 
     }
@@ -48,29 +48,31 @@ public class TestHttp {
 
         for (String line : lines) {
             String fields[] = line.split("\t", 3);
-            String ip = fields[0];
-            String data = fields[1];
-            String timestamp = fields[2];
-            RequestJSON requestJSON = new RequestJSON();
-            Map<String, Object> client = GSON.fromJson(data, listType);
-            requestJSON.setClient(client);
-            requestJSON.setAppname("shouzhu");
-            requestJSON.setIp(ip);
-
-            requestJSON.setScore(5);
-            Map<String, Object> header = (Map<String, Object>) client.get("header");
-            requestJSON.setTaskid("00001");
-            requestJSON.setPassid((String) header.get("uid"));
-            String json = GSON.toJson(requestJSON);
+//            String ip = fields[0];
+//            String data = fields[1];
+//            String timestamp = fields[2];
+//            RequestJSON requestJSON = new RequestJSON();
+//            Map<String, Object> client = GSON.fromJson(data, listType);
+//            requestJSON.setClient(client);
+//            requestJSON.setAppname("shouzhu");
+//            requestJSON.setIp(ip);
+//
+//            requestJSON.setScore(5);
+//            Map<String, Object> header = (Map<String, Object>) client.get("header");
+//            requestJSON.setTaskid("00001");
+//            requestJSON.setPassid((String) header.get("uid"));
+            String json =fields[1];
+//            System.out.println(json);
 
 //            System.out.println(json);
             POOL.submit(new Runnable() {
                 @Override
                 public void run() {
                     String response = HttpRequest.sendJSON("http://www.xqprevention.com/cheat_api/realtime_cheat", json);
-                    if(StringUtils.isEmpty(response)){
+//                    if(!StringUtils.isEmpty(response)){
+                    if(response.contains("虚拟机任务为无效任务"))
                         errorResult.add(json);
-                    }
+//                    }
                     result.add(response);
                 }
             });

@@ -5,3 +5,5 @@ test0004
 test005
 test006
 test009
+test007
+test008

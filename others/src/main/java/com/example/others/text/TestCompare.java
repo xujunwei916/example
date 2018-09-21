@@ -16,8 +16,8 @@ public class TestCompare {
 
     public static void main(String[] args) throws Exception {
 
-        Set<String> lines1 = new HashSet<>(IOUtils.readLines(new FileReader("d://tmp//tmp//1//dataDomainPv.csv")));
-        Set<String> lines2 = new HashSet<>(IOUtils.readLines(new FileReader("d://tmp//tmp//2//dataDomainPv.csv")));
+        Set<String> lines1 = new HashSet<>(IOUtils.readLines(new FileReader("d://tmp//tmp//1//mode1.txt")));
+        Set<String> lines2 = new HashSet<>(IOUtils.readLines(new FileReader("d://tmp//tmp/3//mode1.txt")));
         List<String > result1 =new ArrayList<>();
         List<String > result2 =new ArrayList<>();
         System.out.println(lines1.size());
@@ -35,7 +35,9 @@ public class TestCompare {
                 result2.add(line);
             }
         }
+        System.out.println(result1.size());
         System.out.println(result1);
+        System.out.println(result2.size());
         System.out.println(result2);
 
 

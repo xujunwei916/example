@@ -40,7 +40,7 @@ object TestScala {
 //        println(a.mkString(","))
 //        println("^\\d{1,2}$".r.findFirstIn(date).isEmpty)
         val a =Map("a"->1,"b"->2)
-        println(a.pu)
+//        println(a.pu)
 
 
     }

@@ -1,23 +1,19 @@
 package com.example.spark.job.example.core
 
+import com.example.spark.SimpleBean
 import com.example.spark.common.SparkJob
-import org.apache.spark.sql.RowFactory
-import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
 
-object TestDF extends SparkJob{
-    override protected def run(args: Array[String]): Unit =
-    {
+object TestDF extends SparkJob {
+    override protected def run(args: Array[String]): Unit = {
+        val seq = (0 to 10000).toSeq
+        val sql = sqlContext
+        import sql.implicits._
+        sc.parallelize(seq).repartition(30)//.saveAsTextFile()
+            .toDF().createOrReplaceTempView()
 
-        val rdd = sc.textFile("")
 
 
-        val schema = StructType(List(
-            StructField("id",StringType,true),
-            StructField("name",StringType,true),
-            StructField("age",StringType,true)
-        ))
-          val rdd2=  rdd.map { x => {
-                RowFactory.create(x._1,x._2,x._3)
-            } }
+
+
     }
 }

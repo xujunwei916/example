@@ -11,6 +11,7 @@ import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.Pipeline;
 import redis.clients.jedis.ScanParams;
 import redis.clients.jedis.ScanResult;
 
@@ -34,24 +35,42 @@ public class RedisOption {
         return true;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
 
 //        setData(jedis,"test_set","sss");
 //        jedis.set("test_set2","ssssss","NX");
-        for (int a =0;a<  1000;a++) {
-            final  int b = a;
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    Jedis jedis = getConnect("172.17.20.119", 6379, "rc_redis");
-                    for (int i = 0; i <100000 ; i++) {
-                        jedis.set("test_list"+b,"value"+i);
-                    }
-                    jedis.close();
-                }
-            }).start();
+//        for (int a =0;a<  1000;a++) {
+//            final  int b = a;
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Jedis jedis = getConnect("172.17.20.119", 6379, "rc_redis");
+//                    for (int i = 0; i <100000 ; i++) {
+//                        jedis.set("test_list"+b,"value"+i);
+//                    }
+//                    jedis.close();
+//                }
+//            }).start();
+//        }
+
+        long start =System.currentTimeMillis();
+        Jedis jedis = getConnect("127.0.0.1", 6379, "123456");
+        Pipeline pipeline = jedis.pipelined();
+        int count=0;
+        for (int i = 0; i <1000000 ; i++) {
+            pipeline.select(2);
+            pipeline.set(i+"",i+"");
+            count++;
+            if(count%10000==0){
+                pipeline.sync();
+            }
         }
+        pipeline.sync();
+        pipeline.close();
+        jedis.close();
+        long end= System.currentTimeMillis();
+        System.out.println(end-start);
 
 
 //        for (int i = 0; i <1000000 ; i++) {

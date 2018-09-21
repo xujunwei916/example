@@ -7,16 +7,17 @@ import java.util.TimerTask;
 
 public class TestThread {
 
-    private Set<String> set = new HashSet<String>();
-
-
-    public Set<String> getSet() {
-        return set;
-    }
-
-    public void setSet(Set<String> set) {
-        this.set = set;
-    }
+//    private Set<String> set = new HashSet<String>();
+//
+//
+//    public Set<String> getSet() {
+//        return set;
+//    }
+//
+//    public void setSet(Set<String> set) {
+//        this.set = set;
+//    }
+    private int a =10;
 
 
     public static void main(String[] args) {
@@ -29,25 +30,26 @@ public class TestThread {
 
             @Override
             public void run() {
-                Set<String> set =  new HashSet<>();
-                set.add("aaaa");
-                set.add("aaaa");
-                testThread.setSet(set);
+//                Set<String> set =  new HashSet<>();
+//                set.add("aaaa");
+//                set.add("aaaa");
+//                testThread.setSet(set);
 //                System.out.println("laod");
+                testThread.a=10;
             }
         };
         // delay：用户调用 schedule() 方法后，要等待这么长的时间才可以第一次执行run() 方法
         // period：第一次调用之后，从第二次开始每隔多长的时间调用一次 run() 方法
-        timer.schedule(task, 10, 10);
+        timer.schedule(task, 1, 1);
 
         long count =0L;
 
         while (true){
-            testThread.getSet().contains("aaaaa");
-            count++;
-            if(count%1000000==0){
-                System.out.println(count);
+
+            if(testThread.a!=10){
+                throw new RuntimeException("eeeeee");
             }
+//            System.out.println(testThread.a);
         }
     }
 

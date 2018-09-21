@@ -2,6 +2,7 @@ package com.example.spark.common
 
 import com.example.others.log.ExampleLog
 import org.apache.hadoop.fs.FileSystem
+import org.apache.hadoop.util.ShutdownHookManager
 import org.apache.spark
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
@@ -63,6 +64,8 @@ abstract class SparkStreamingJob extends ExampleLog{
   }
 
   def close()={
+      val shutdownHookRef = ShutdownHookManager.addShutdownHook(
+          StreamingContext.SHUTDOWN_HOOK_PRIORITY)(stopOnShutdown)
     ssc.stop()
   }
   def start()={
@@ -70,6 +73,13 @@ abstract class SparkStreamingJob extends ExampleLog{
     ssc.awaitTermination()
   }
   protected def processError(exception:Exception)={
+
+  }
+
+  private def stopOnShutdown(): Unit = {
+    val stopGracefully = sparkConf.getBoolean("spark.streaming.stopGracefullyOnShutdown", false)
+
+    // Do not stop SparkContext, let its own shutdown hook stop it
 
   }
 
