@@ -1,0 +1,8 @@
+syntax = "proto3";
+package netty;
+option java_outer_classname = "TestProto";
+
+message TestProto{
+    int32 sysReqID = 1;
+    string userName = 2;
+}

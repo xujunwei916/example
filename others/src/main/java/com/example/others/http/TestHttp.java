@@ -34,7 +34,11 @@ public class TestHttp {
 //        }
 
 
-        TestPost("D:\\test\\test\\08_09.txt","D:\\test\\test\\08_09_result.txt","D:\\test\\test\\08_09_ERROR.txt");
+        for (int i = 0; i < 1 ; i++) {
+            TestPost("D:\\test\\test\\08_09.txt","D:\\test\\test\\08_09_result.txt","D:\\test\\test\\08_09_ERROR.txt");
+            Thread.sleep(1000);
+        }
+
 
 
     }

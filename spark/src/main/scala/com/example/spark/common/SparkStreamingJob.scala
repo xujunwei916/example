@@ -64,8 +64,6 @@ abstract class SparkStreamingJob extends ExampleLog{
   }
 
   def close()={
-      val shutdownHookRef = ShutdownHookManager.addShutdownHook(
-          StreamingContext.SHUTDOWN_HOOK_PRIORITY)(stopOnShutdown)
     ssc.stop()
   }
   def start()={

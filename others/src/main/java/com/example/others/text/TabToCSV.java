@@ -16,8 +16,8 @@ public class TabToCSV {
         Pattern pattern2 = Pattern.compile("^(\\d{4}-\\d{2}-\\d{2})\t([a-zA-Z0-9_\\.]+)\t(.*)\t([\\-0-9\\.]*)\t(.*)\t(\\d+)$");
 
         String headers[] = new String[]{"date", "package", "appName", "version", "appTitle", "num"};
-        BufferedReader reader = new BufferedReader(new FileReader("D:\\tmp\\QS\\QD.txt"));
-        CSVWriter writer = new CSVWriter(new FileWriter("D:\\tmp\\QS\\result\\QD.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("D:\\tmp\\QS\\DYD.txt"));
+        CSVWriter writer = new CSVWriter(new FileWriter("D:\\tmp\\QS\\result\\DYD.txt"));
         String line = null;
         String tmpLine = null;
         writer.writeNext(headers);

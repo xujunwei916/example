@@ -34,6 +34,8 @@ public class TestCsvLine {
     /** Default line terminator uses platform encoding. */
     public static final String DEFAULT_LINE_END = "\n";
 
+
+
     public static void main(String[] args) throws IOException {
 
 
@@ -58,7 +60,7 @@ public class TestCsvLine {
 //            cout+=1;
         }
         System.out.println(System.currentTimeMillis()-start);
-        System.out.println(toLine2(line));
+        System.out.println(toLine(line));
 
 
 

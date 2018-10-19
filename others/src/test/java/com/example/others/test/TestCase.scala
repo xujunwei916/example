@@ -32,6 +32,10 @@ object TestCase {
 //        println(sqlClick)
 //        println(sql)
 
+        Array("a","b","c").map(a => {println(a)
+            a+"1"}).map(a => {println(a)
+            a+"1"}).foreach(println(_))
+
     }
 
 }
