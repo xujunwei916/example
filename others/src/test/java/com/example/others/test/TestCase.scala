@@ -32,9 +32,17 @@ object TestCase {
 //        println(sqlClick)
 //        println(sql)
 
-        Array("a","b","c").map(a => {println(a)
-            a+"1"}).map(a => {println(a)
-            a+"1"}).foreach(println(_))
+//        Array("a","b","c").map(a => {println(a)
+//            a+"1"}).map(a => {println(a)
+//            a+"1"}).foreach(println(_))
+//        println(List(5,3,2,1,5,222,33).sorted)
+
+        val aaa = Array(1,2,3)
+        val b = aaa.slice(0,2)
+        println(b.mkString(","))
+
+//        val map = Map(1->2,2->3)
+//        println(map + (1->3))
 
     }
 

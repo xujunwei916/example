@@ -2,6 +2,7 @@ package com.example.spark.job.example.core
 
 import com.example.spark.common.SparkJob
 import org.apache.hadoop.io.compress.SnappyCodec
+import org.apache.spark.SparkFiles
 import org.apache.spark.sql.SaveMode
 
 /**
@@ -22,8 +23,13 @@ object WordCountExample extends SparkJob{
     val result = rdd.flatMap(_.split("\\s+")).map((_,1)).reduceByKey(_+_)
     result.collect().foreach(println(_))
     rdd.saveAsTextFile("/tmp",classOf[SnappyCodec])
+    sc.hadoopConfiguration.set("mapreduce.output.fileoutputformat.compress","true")
+    sc.hadoopConfiguration.set("mapreduce.output.fileoutputformat.compress.codec","org.apache.hadoop.io.compress.SnappyCodec")
+//    rdd.saveAsObjectFile()
+    SparkFiles.get("")
     val sql =sqlContext
     import sql.implicits._
+    result.mapPartitions(sign=>sign.toList.iterator)
     rdd.toDF("a","b").write.bucketBy(3, "name").mode(SaveMode.Append).insertInto("")
   }
 }
