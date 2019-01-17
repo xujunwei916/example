@@ -144,7 +144,7 @@ public class HiveSimple2 {
             Statement stmt = conn.createStatement();
             // 创建的表名
             String tableName = "test";
-            ResultSet res =stmt.executeQuery("select `name`,`age` from test");
+            ResultSet res =stmt.executeQuery("select '111111111111',`id` from dual");
             while (res
                     .next()){
                 System.out.println(res.getString(1)+"\t"+res.getInt(2));

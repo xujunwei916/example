@@ -1,17 +1,15 @@
 package com.example.spark.brodcast;
 
-import org.apache.spark.api.java.function.FlatMapFunction;
-import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.types.StringType;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Arrays;
 import java.util.List;
+
+import scala.collection.JavaConverters;
+import scala.collection.Seq;
 
 public class BrodcastTest {
 
@@ -19,13 +17,16 @@ public class BrodcastTest {
 //        SP
 //    }
         SparkSession sparkSession = SparkSession.builder().appName("test").master("local[3]").getOrCreate();
-        List<String > data = new ArrayList<>();
-        data.add("1");
-        data.add("2");
+        List<Data > datas= new ArrayList<>();
+        datas.add(new Data("xujw",1));
+        datas.add(new Data("xujw2",2));
 
-        Dataset<Row> df = sparkSession.createDataFrame(data,String.class).toDF("a");
+        Dataset<Row> df = sparkSession.createDataFrame(datas,Data.class);
 
         df.show();
+        Dataset<Row> df2 = df.toDF("id2","name");
+        Dataset<Row> result = df.join(df2,toSeq("name"),"left");
+        result.show();
         sparkSession.stop();
 //       df.withColumn("aaa",new Column("a+b+c+d"));
 //                .flatMap((FlatMapFunction<Row, Object>) row -> new ArrayList<Object>().iterator(),null);
@@ -36,6 +37,15 @@ public class BrodcastTest {
 
 
 //        sparkSession.read().
+    }
+
+
+    public static Seq<String> toSeq(String ... values){
+
+        List<String> list = new ArrayList<>();
+        list.addAll(Arrays.asList(values));
+        Seq<String> tmpSeq = JavaConverters.asScalaIteratorConverter(list.iterator()).asScala().toSeq();
+        return tmpSeq;
     }
 
 }

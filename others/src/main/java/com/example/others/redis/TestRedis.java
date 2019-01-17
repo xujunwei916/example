@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 //import org.springframework.data.redis.core.RedisTemplate;
 //import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -117,6 +118,13 @@ public class TestRedis {
 //
 //        Pool.shutdown();
 //        System.out.println(System.currentTimeMillis()-l);
+
+        Jedis  redis = new Jedis("172.17.20.119", 6379, 10000);
+        redis.auth("rc_redis");
+        redis.select(0);
+        Map<String,String> result= redis.hgetAll("skfkdsakfkdskfdskfkds");
+        System.out.println(result);
+        redis.close();
 
 
     }

@@ -59,6 +59,16 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.11</artifactId>
             <version>${spark.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jersey-guava</artifactId>
+                    <groupId>org.glassfish.jersey.bundles.repackaged</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -70,6 +80,12 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-yarn_2.11</artifactId>
             <version>${spark.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -98,6 +114,12 @@
             <groupId>org.deeplearning4j</groupId>
             <artifactId>deeplearning4j-core</artifactId>
             <version>0.9.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -136,13 +158,6 @@
             <scope>system</scope>
             <systemPath>E:/git/xjw/example/spark/lib/gpu-enabler_2.11-2.0.0.jar</systemPath>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>com.ibm</groupId>-->
-        <!--<artifactId>original-gpu-enabler_2.11</artifactId>-->
-        <!--<version>2.0.0</version>-->
-        <!--<scope>system</scope>-->
-        <!--<systemPath>E:/git/xjw/example/spark/lib/original-gpu-enabler_2.11-2.0.0.jar</systemPath>-->
-        <!--</dependency>-->
 
 
     </dependencies>

@@ -19,6 +19,7 @@
 
     <properties>
         <scala.version>2.11.8</scala.version>
+        <json4s.version>3.2.11</json4s.version>
     </properties>
 
     <build>
@@ -85,7 +86,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>19.0</version>
+            <version>15.0</version>
         </dependency>
 
 
@@ -103,22 +104,22 @@
         <dependency>
             <groupId>org.json4s</groupId>
             <artifactId>json4s-core_2.11</artifactId>
-            <version>3.5.4</version>
+            <version>${json4s.version}</version>
         </dependency>
         <dependency>
             <groupId>org.json4s</groupId>
             <artifactId>json4s-jackson_2.11</artifactId>
-            <version>3.5.4</version>
+            <version>${json4s.version}</version>
         </dependency>
         <dependency>
             <groupId>org.json4s</groupId>
             <artifactId>json4s-scalaz_2.11</artifactId>
-            <version>3.5.4</version>
+            <version>${json4s.version}</version>
         </dependency>
         <dependency>
             <groupId>org.json4s</groupId>
             <artifactId>json4s-native_2.11</artifactId>
-            <version>3.5.4</version>
+            <version>${json4s.version}</version>
         </dependency>
 
         <dependency>

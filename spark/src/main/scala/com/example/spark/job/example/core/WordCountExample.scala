@@ -31,5 +31,7 @@ object WordCountExample extends SparkJob{
     import sql.implicits._
     result.mapPartitions(sign=>sign.toList.iterator)
     rdd.toDF("a","b").write.bucketBy(3, "name").mode(SaveMode.Append).insertInto("")
+
+
   }
 }

@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.IOUtils;
@@ -17,7 +18,7 @@ public class TestProducer {
 
     public static void main(String[] args) throws Exception {
 
-        List<Message> messages=readMessage("D:\\test\\swool\\swoole-kafka-1-2018-10-15_08.log");
+        List<Message> messages = readMessage("D:\\test\\swool\\swoole-kafka-1-2018-10-15_08.log");
 
         Properties props = new Properties();
         props.put("bootstrap.servers", "172.17.20.119:9092,172.17.20.1137:9092");
@@ -28,18 +29,16 @@ public class TestProducer {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         //生产者发送消息
 
-        String topic = "intAds20181019";
+        String topic = "AdControlOut20180911";
         Producer<String, String> procuder = new KafkaProducer<String, String>(props);
-        for (Message message:messages) {
+        Random random = new Random();
+        for (int i = 0; i < 1000000; i++) {
+            int send = random.nextInt(10);
 
-            if("intAds20180629".equals(message.getTopic())){
-//                System.out.println();
-                ProducerRecord<String, String> msg = new ProducerRecord<String, String>(topic, message.getKey(),message.getValue());
-                procuder.send(msg);
-            }else{
-//                System.out.println(message.getTopic());
-            }
-
+            String value = "time=2018-12-04 00:39:18&dt=2018-12-04&hr=00&ci=凉山&pr=四川&i=10004801&ac=out\ta=" + send + "&o=1&f=100&r=74&od=0&c=36|a=100032&o=0&f=0.0&r=40&od=1";
+            ProducerRecord<String, String> msg = new ProducerRecord<String, String>(topic, null, value);
+            procuder.send(msg);
+            Thread.sleep(1);
         }
         System.out.println("send message over.");
         procuder.close(100, TimeUnit.MILLISECONDS);

@@ -34,7 +34,7 @@ abstract class SparkJob extends ExampleLog{
   }
 
   protected def initJob() = {
-    sparkConf.setMaster("local[*]")
+    sparkConf.setMaster("yarn")
     sparkConf.setAppName(this.getClass.getName+"_"+System.currentTimeMillis())
     init()
 

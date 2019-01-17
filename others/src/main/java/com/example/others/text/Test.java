@@ -26,20 +26,25 @@ public class Test {
 //        writer.close();
 //        Object s = 1;
 //        System.out.println(s instanceof Long);
-        DateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        List<String> lines = IOUtils.readLines(new FileReader("D://tmp/timestamp.txt"));
-        lines.sort(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
-        for (String line: lines
-             ) {
-            System.out.println(SDF.format(new Date(Long.valueOf(line))) );
+//        DateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        List<String> lines = IOUtils.readLines(new FileReader("D://tmp/timestamp.txt"));
+//        lines.sort(new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                return o1.compareTo(o2);
+//            }
+//        });
+//        for (String line: lines
+//             ) {
+//            System.out.println(SDF.format(new Date(Long.valueOf(line))) );
+//
+//        }
 
-        }
+//        System.out.println("[\"10004501\",\"10004502\",\"10004503\"]".replaceAll("\\[|\\]|\"|'", ""));
 
+        Integer a =-1;
+        int b=-1;
+        System.out.println(a==b);
 
 
     }
