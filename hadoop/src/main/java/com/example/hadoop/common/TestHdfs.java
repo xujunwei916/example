@@ -12,12 +12,12 @@ import java.io.IOException;
 public class TestHdfs {
     public static void main(String[] args) throws Exception {
         FileSystem fs = FileSystem.get(new Configuration());
-        FileStatus [] files= fs.listStatus(new Path("/app-logs"));
+        FileStatus [] files= fs.listStatus(new Path("/"));
         for (FileStatus file: files             ) {
             System.out.println(file.getPath());
         }
 
-        LogsCLI.main(new String[]{"-applicationId","application_1534917772850_0001"});
+//        LogsCLI.main(new String[]{"-applicationId","application_1534917772850_0001"});
 
     }
 }

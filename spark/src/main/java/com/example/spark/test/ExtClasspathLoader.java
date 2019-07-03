@@ -21,7 +21,7 @@ public final class ExtClasspathLoader {
         } catch (Exception e1) {
             e1.printStackTrace();
         }
-       Thread.currentThread().getContextClassLoader().
+//       Thread.currentThread().getContextClassLoader().
 
 
     }

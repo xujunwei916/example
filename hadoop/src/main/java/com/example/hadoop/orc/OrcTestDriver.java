@@ -8,6 +8,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.JobPriority;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
@@ -46,6 +47,7 @@ public class OrcTestDriver extends Configured implements Tool {
         //job.setOutputKeyClass(Text.class);//对map和reduce输出都生效
         //job.setOutputValueClass(Text.class);
         //输入输出路径
+        job.setPriority(JobPriority.LOW);
         OrcInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         return job.waitForCompletion(true) ? 0 : 1;
