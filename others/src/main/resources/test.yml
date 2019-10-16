@@ -1,0 +1,9 @@
+ip: '192.168.102.31'
+port: '7788'
+spring:
+    application:
+        name: cruncher
+server:
+    port2: 9000
+monitor_nic: 
+    nic: {name: 'ethA', slot: 0, cpu: 0}

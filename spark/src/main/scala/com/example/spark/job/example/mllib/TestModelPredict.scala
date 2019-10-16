@@ -13,5 +13,8 @@ object TestModelPredict extends SparkJob{
 //        val gbdt:GBTClassificationModel = null
 //        gbdt.transform()
         data.agg(("pv","sum"))
+
+
+        spark.read.orc()
     }
 }

@@ -20,7 +20,7 @@ public class TestSpark {
 //                return null;
 //            }
 //        })
-        JavaPairRDD<String,String> aaa= null;
+//        JavaPairRDD<String,String> aaa= null;
 
 //        S
 //        aaa.mapValues()

@@ -20,7 +20,7 @@ public class HiveSimple2 {
     private static String driverName = "org.apache.hive.jdbc.HiveDriver";
     // 注意：这里的principal是固定不变的，其指的hive服务所对应的principal,而不是用户所对应的principal
 //    private static String url = "jdbc:hive2://cluster137:10000/default";
-    private static String url = "jdbc:hive2://master1,master2,node1:2181/default;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2_zk";
+    private static String url = "jdbc:hive2://master1:10000/default";
 
 //    private static String url = "jdbc:hive2://master1:10000/default";
     private static ResultSet res;
@@ -33,22 +33,30 @@ public class HiveSimple2 {
     }
 
     public static void main(String[] args) {
+        for (int i=0 ; i<100;i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Connection conn = get_conn();
+                        Statement stmt = conn.createStatement();
+                        // 创建的表名
+                        String tableName = "test";
+                        ResultSet res = stmt.executeQuery("show current roles");
+                        while (res.next()) {
+                            System.out.println(res.getString(1) );
+                        }
 
-        try {
-            Connection conn = get_conn();
-            Statement stmt = conn.createStatement();
-            // 创建的表名
-            String tableName = "test";
-            ResultSet res = stmt.executeQuery("show tables");
-            while (res.next()) {
-                System.out.println(res.getString(1) );
-            }
-
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("!!!!!!END!!!!!!!!");
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        System.out.println("!!!!!!END!!!!!!!!");
+                    }
+                }
+            }).start();
         }
+
+
     }
 }

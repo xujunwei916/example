@@ -24,5 +24,6 @@ object TestScala {
         val List(k1,null) = list
 //        println(k1)
 //        println(k2)
+        Array(1,2,3).mkString(",")
     }
 }

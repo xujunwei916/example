@@ -82,9 +82,16 @@ object TestJson {
 
 
 
-        val a:Double = 1000.0
-        val b =a.asInstanceOf[Long]
-        println("s"+b+"b")
+//        val a:Double = 1000.0
+//        val b =a.asInstanceOf[Long]
+//        println("s"+b+"b")
+
+
+//        val a = Array(1,2,3,4,5,6,7)
+//        val b = a.grouped(3).foreach(a => println(a.mkString("sss{",",","}ddd")))
+//        println(b)
+
+//        new
 
 
 
