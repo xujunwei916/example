@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class BrodcastTest {
         datas.add(new Data("xujw",1));
         datas.add(new Data("xujw2",2));
         Dataset<Row> df = sparkSession.createDataFrame(datas,Data.class);
+        df.write().mode(SaveMode.Append).partitionBy("name").orc("/tmp/sssss");
         df.show();
 //        Dataset<Row> df2 = df.toDF("id2","name");
 //        Dataset<Row> result = df.join(df2,toSeq("name"),"left");

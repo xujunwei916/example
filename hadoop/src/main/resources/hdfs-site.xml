@@ -16,43 +16,43 @@
   </property>
   <property>
     <name>ha.zookeeper.quorum</name>
-    <value>master1:2181,master2:2181,node1:2181</value>
+    <value>cdh-01:2181,cdh-02:2181,cdh-03:2181</value>
   </property>
   <property>
     <name>dfs.ha.namenodes.nameservice1</name>
-    <value>namenode103,namenode95</value>
+    <value>namenode114,namenode117</value>
   </property>
   <property>
-    <name>dfs.namenode.rpc-address.nameservice1.namenode103</name>
-    <value>master1:8020</value>
+    <name>dfs.namenode.rpc-address.nameservice1.namenode114</name>
+    <value>cdh-01:8020</value>
   </property>
   <property>
-    <name>dfs.namenode.servicerpc-address.nameservice1.namenode103</name>
-    <value>master1:8022</value>
+    <name>dfs.namenode.servicerpc-address.nameservice1.namenode114</name>
+    <value>cdh-01:8022</value>
   </property>
   <property>
-    <name>dfs.namenode.http-address.nameservice1.namenode103</name>
-    <value>master1:50070</value>
+    <name>dfs.namenode.http-address.nameservice1.namenode114</name>
+    <value>cdh-01:50070</value>
   </property>
   <property>
-    <name>dfs.namenode.https-address.nameservice1.namenode103</name>
-    <value>master1:50470</value>
+    <name>dfs.namenode.https-address.nameservice1.namenode114</name>
+    <value>cdh-01:50470</value>
   </property>
   <property>
-    <name>dfs.namenode.rpc-address.nameservice1.namenode95</name>
-    <value>master2:8020</value>
+    <name>dfs.namenode.rpc-address.nameservice1.namenode117</name>
+    <value>cdh-02:8020</value>
   </property>
   <property>
-    <name>dfs.namenode.servicerpc-address.nameservice1.namenode95</name>
-    <value>master2:8022</value>
+    <name>dfs.namenode.servicerpc-address.nameservice1.namenode117</name>
+    <value>cdh-02:8022</value>
   </property>
   <property>
-    <name>dfs.namenode.http-address.nameservice1.namenode95</name>
-    <value>master2:50070</value>
+    <name>dfs.namenode.http-address.nameservice1.namenode117</name>
+    <value>cdh-02:50070</value>
   </property>
   <property>
-    <name>dfs.namenode.https-address.nameservice1.namenode95</name>
-    <value>master2:50470</value>
+    <name>dfs.namenode.https-address.nameservice1.namenode117</name>
+    <value>cdh-02:50470</value>
   </property>
   <property>
     <name>dfs.replication</name>

@@ -18,11 +18,11 @@ public class TestHdfs {
             System.out.println(file.getPath());
         }
 
-        FileSystem fs2 = FileSystem.get(new Configuration());
-        FileStatus[] files2 = fs2.listStatus(new Path("/sdddd"));
-        for (FileStatus file : files2) {
-            System.out.println(file.getPath());
-        }
+//        FileSystem fs2 = FileSystem.get(new Configuration());
+//        FileStatus[] files2 = fs2.listStatus(new Path("/sdddd"));
+//        for (FileStatus file : files2) {
+//            System.out.println(file.getPath());
+//        }
 
 
 //        FSDataOutputStream fsDataOutputStream = fs.create(new Path("dddd"));

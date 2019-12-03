@@ -12,7 +12,7 @@
     <artifactId>flume</artifactId>
 
     <properties>
-        <flume.version>1.8.0</flume.version>
+        <flume.version>1.9.0</flume.version>
     </properties>
 
     <dependencies>
@@ -52,6 +52,18 @@
             <type>pom</type>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.apache.flume.flume-ng-sources</groupId>
+            <artifactId>flume-kafka-source</artifactId>
+            <version>${flume.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-node</artifactId>
+            <version>${flume.version}</version>
+        </dependency>
 
     </dependencies>
 
