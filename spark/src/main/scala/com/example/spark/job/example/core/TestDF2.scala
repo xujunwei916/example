@@ -23,5 +23,8 @@ object TestDF2 extends SparkJob {
             .orderBy("dt", "hr")
         df.repartition(1).write.csv("D:\\test\\cheat\\result2")
 
+
+        ss.read.orc()
+
     }
 }
