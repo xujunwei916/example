@@ -15,6 +15,7 @@
         <module>hive</module>
         <module>others</module>
         <module>hbase</module>
+        <module>zookeeper</module>
     </modules>
 
     <properties>

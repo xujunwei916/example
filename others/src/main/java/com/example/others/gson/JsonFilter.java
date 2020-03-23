@@ -7,10 +7,10 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import scala.actors.threadpool.Arrays;
 
 public class JsonFilter {
 

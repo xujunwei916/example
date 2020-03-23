@@ -36,10 +36,25 @@ public class HiveSimple2 {
 
         try {
             Connection conn = get_conn();
-            Statement stmt = conn.createStatement();
+            final Statement stmt = conn.createStatement();
             // 创建的表名
             String tableName = "test";
-            ResultSet res = stmt.executeQuery("select * from default.aaa where 1=0");
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(20000L);
+                        stmt.cancel();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+            ResultSet res = stmt.executeQuery("select count(1) from default.aaa ");
+
+
+            stmt.cancel();
             while (res.next()) {
                 System.out.println(res.getString(1));
             }

@@ -98,12 +98,6 @@
             <artifactId>kafka-clients</artifactId>
             <version>1.0.1</version>
         </dependency>
-        <dependency>
-            <groupId>guess</groupId>
-            <artifactId>com.guess2345</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.kafka</groupId>
@@ -151,6 +145,18 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.yandex.clickhouse</groupId>
+            <artifactId>clickhouse-jdbc</artifactId>
+            <version>0.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.webank.wedatasphere.linkis</groupId>
+            <artifactId>linkis-ujes-client</artifactId>
+            <version>0.9.3</version>
         </dependency>
 
     </dependencies>
