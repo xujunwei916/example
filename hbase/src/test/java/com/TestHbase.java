@@ -8,10 +8,6 @@ import org.apache.hadoop.hbase.client.ConnectionFactory;
 import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.Table;
-import org.bang50.union2.guess.dataframe.DfUserFavor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TestHbase {
     public static void main(String[] args) throws Exception {
