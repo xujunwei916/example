@@ -30,13 +30,4 @@ public class DefaultEnsembleProvider implements EnsembleProvider {
         //NOP
     }
 
-    @Override
-    public void setConnectionString(String s) {
-
-    }
-
-    @Override
-    public boolean updateServerListEnabled() {
-        return false;
-    }
 }
