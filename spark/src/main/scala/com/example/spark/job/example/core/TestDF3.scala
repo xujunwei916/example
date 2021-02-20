@@ -24,6 +24,11 @@ object TestDF3 extends SparkJob {
         df.show(100)
 
 
+        df.rdd.foreachPartition(row=>{
+            row.map()
+        })
+
+
 
 
 

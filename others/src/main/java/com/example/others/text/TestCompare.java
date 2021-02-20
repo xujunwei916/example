@@ -1,5 +1,9 @@
 package com.example.others.text;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.codec.digest.Md5Crypt;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.io.IOUtils;
 
@@ -11,44 +15,28 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import org.json4s.FileInput;
 
 public class TestCompare {
 
 
     public static void main(String[] args) throws Exception {
 
-        Set<String> lines1 = new HashSet<>(IOUtils.readLines(new FileReader("C:\\Users\\xujw\\Downloads\\data_2018-12-10 03_55_09 PM.csv")));
-        Set<String> lines2 = new HashSet<>(IOUtils.readLines(new FileReader("C:\\Users\\xujw\\Downloads\\data_2018-12-10 03_34_10 PM.csv")));
-        List<String> result1 = new ArrayList<>();
-        List<String> result2 = new ArrayList<>();
+        List<String> lines1 =  IOUtils.readLines(new FileInputStream("D://2222.txt"));
+        List<String> lines2 =  IOUtils.readLines(new FileInputStream("D://1111.txt"));
+        Set<String> set = new HashSet<>(5000000);
+        set.addAll(lines1);
         System.out.println(lines1.size());
-//        System.out.println(new HashSet<>(lines1).size());
-
-        for (String line : lines1) {
-
-            if (!lines2.contains(line)) {
-                result1.add(line);
+        System.out.println(lines2.size());
+        int count =0;
+        for (String line :lines2) {
+            if(!set.contains(line)){
+                count++;
             }
         }
+        System.out.println(count);
 
-        for (String line : lines2) {
-            if (!lines1.contains(line)) {
-                result2.add(line);
-            }
-        }
-        System.out.println("size1 = "+ result1.size());
-        System.out.println(result1);
-//        printList(result1);
-        System.out.println("size2 = "+result2.size());
-        System.out.println(result2);
-//        printList(result2);
     }
 
-    public static void printList(Collection<String> cols) {
 
-        for (String line : cols) {
-            System.out.println(line);
-
-        }
-    }
 }

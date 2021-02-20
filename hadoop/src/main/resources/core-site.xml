@@ -4,7 +4,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://nameservice1</value>
+    <value>hdfs://cdh-node0.hypers.com:8020</value>
   </property>
   <property>
     <name>fs.trash.interval</name>
@@ -44,14 +44,6 @@
   </property>
   <property>
     <name>hadoop.proxyuser.mapred.groups</name>
-    <value>*</value>
-  </property>
-  <property>
-    <name>hadoop.proxyuser.flume.hosts</name>
-    <value>*</value>
-  </property>
-  <property>
-    <name>hadoop.proxyuser.flume.groups</name>
     <value>*</value>
   </property>
   <property>
@@ -142,4 +134,8 @@
     <value>ssl-client.xml</value>
     <final>true</final>
   </property>
+<property>
+  <name>fs.alluxio.impl</name>
+  <value>alluxio.hadoop.FileSystem</value>
+</property>
 </configuration>

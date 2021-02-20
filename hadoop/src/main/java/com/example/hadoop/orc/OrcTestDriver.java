@@ -1,9 +1,7 @@
 package com.example.hadoop.orc;
 
 import com.example.hadoop.common.JobUtils;
-
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -16,7 +14,18 @@ import org.apache.hadoop.util.ToolRunner;
 import org.apache.orc.mapreduce.OrcInputFormat;
 
 
-public class OrcTestDriver extends Configured implements Tool {
+public class OrcTestDriver implements Tool {
+    private Configuration conf;
+
+    @Override
+    public Configuration getConf() {
+        return conf;
+    }
+
+    @Override
+    public void setConf(Configuration conf) {
+        this.conf = conf;
+    }
 
     public static void main(String args[]) throws Exception {
         int res = ToolRunner.run(new Configuration(), new OrcTestDriver(), args);
@@ -25,7 +34,6 @@ public class OrcTestDriver extends Configured implements Tool {
 
     @Override
     public int run(String[] args) throws Exception {
-        Configuration conf = new Configuration();
         conf.set("hive.llap.io.cache.orc.size","175953100");
         //要设置结构，否则reduce会提示输入空值
         conf.set("orc.mapred.output.schema", "struct<account:string,domain:string,post:string>");

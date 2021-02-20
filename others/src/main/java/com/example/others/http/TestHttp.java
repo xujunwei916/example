@@ -34,10 +34,13 @@ public class TestHttp {
 //        }
 
 
-        for (int i = 0; i < 1 ; i++) {
-            TestPost("D:\\test\\test\\08_09.txt","D:\\test\\test\\08_09_result.txt","D:\\test\\test\\08_09_ERROR.txt");
-            Thread.sleep(1000);
-        }
+//        for (int i = 0; i < 1 ; i++) {
+//            TestPost("D:\\test\\test\\08_09.txt","D:\\test\\test\\08_09_result.txt","D:\\test\\test\\08_09_ERROR.txt");
+//            Thread.sleep(1000);
+//        }
+
+        String response = HttpRequest.sendPost("http://10.16.100.0:9091/metrics/job/pushgateway1/instance/chd-node1", "test01 1000");
+        System.out.println(response);
 
 
 

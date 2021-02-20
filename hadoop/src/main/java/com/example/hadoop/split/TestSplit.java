@@ -11,6 +11,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
@@ -42,7 +43,6 @@ public class TestSplit {
         job.setOutputValueClass(Text.class);
         OrcInputFormat.addInputPath(job, new Path("/tmp/00.txt.gz"));
         FileOutputFormat.setOutputPath(job, new Path("/tmp/001"));
-
         List<InputSplit> splits = new TextInputFormat().getSplits(job);
         for (Object o :splits
              ) {
