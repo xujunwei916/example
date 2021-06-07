@@ -18,6 +18,12 @@
     <artifactId>hadoop</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.20</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
@@ -53,6 +59,12 @@
             <artifactId>hadoop-aws</artifactId>
             <version>${hadoop.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.parquet</groupId>
+            <artifactId>parquet-hadoop</artifactId>
+            <version>1.8.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.apache.orc</groupId>

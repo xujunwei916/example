@@ -1,7 +1,10 @@
 package com.example.others.csv;
 
-import au.com.bytecode.opencsv.CSVReader;
-import au.com.bytecode.opencsv.CSVWriter;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+import com.opencsv.CSVWriter;
+import com.opencsv.RFC4180Parser;
+import com.opencsv.RFC4180ParserBuilder;
 import java.io.FileReader;
 import java.io.FileWriter;
 
@@ -9,8 +12,10 @@ public class CsvTest2 {
 
     public static void main(String[] args) throws Exception {
 
-        CSVReader reader = new CSVReader(new FileReader("D://test/test_in.csv"),',','"', CSVWriter.NO_ESCAPE_CHARACTER);
-
+        RFC4180Parser rfc4180Parser = new RFC4180ParserBuilder().build();
+        CSVReaderBuilder csvReaderBuilder = new CSVReaderBuilder(new FileReader("D://test/test_in.csv")).withCSVParser(rfc4180Parser);
+//        CSVReader reader = new CSVReader(new FileReader("D://test/test_in.csv"));
+        CSVReader reader = csvReaderBuilder.build();
         String out = "D://test//test.csv";
         CSVWriter writer = new CSVWriter(new FileWriter(out));
 

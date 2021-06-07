@@ -1,100 +1,93 @@
 package com.example.others.ast;
 
+import org.roaringbitmap.RoaringBitmap;
+
 public class ASTNode {
-    private ASTNodeType type;
-    private double value;
-    private ASTNode leftChild;
-    private ASTNode rightChild;
 
-    public ASTNode() {
-        type = ASTNodeType.UNDEFINED;
-        value = 0;
-        leftChild = null;
-        rightChild = null;
+  private ASTNodeType type;
+  private RoaringBitmap value;
+  private ASTNode leftChild;
+  private ASTNode rightChild;
+
+  public ASTNode() {
+    type = ASTNodeType.UNDEFINED;
+    value = new RoaringBitmap();
+    leftChild = null;
+    rightChild = null;
+  }
+  public ASTNode(ASTNodeType type, RoaringBitmap value, ASTNode leftChild, ASTNode rightChild) {
+    this.type = type;
+    this.value = value;
+    this.leftChild = leftChild;
+    this.rightChild = rightChild;
+  }
+
+  @Override
+  public String toString() {
+    String str = "--------------------------------------------\n";
+    switch (type) {
+      case BITSET_VALUE:
+        str += "node_type: BITSET_VALUE \n";
+        str += "value: " + value + "\n";
+        break;
+      case OPERATOR_AND:
+        str += "node_type: OPERATOR_AND\n";
+        break;
+      case OPERATOR_AND_NOT:
+        str += "node_type: OPERATOR_AND_NOT\n";
+        break;
+      case OPERATOR_OR:
+        str += "node_type: OPERATOR_OR\n";
+        break;
+      default:
+        str += "ERROR!!!!!!!!!!!!!!\n";
+        break;
     }
+    if (leftChild != null) {
+      str += "left_child";
+      str += leftChild.toString();
+    } else
+      str += "left_child is null\n";
 
-    public ASTNode(ASTNodeType type, double value, ASTNode leftChild, ASTNode rightChild) {
-        this.type = type;
-        this.value = value;
-        this.leftChild = leftChild;
-        this.rightChild = rightChild;
-    }
+    if (rightChild != null) {
+      str += "right_child";
+      str += rightChild.toString();
+    } else
+      str += "right_child is null\n";
 
-    @Override
-    public String toString() {
-        String str = "--------------------------------------------\n";
-        switch (type) {
-            case NUMBER_VALUE:
-                str += "node_type: NUMBER_VALUE\n";
-                str += "value: " + value + "\n";
-                break;
-            case OPERATOR_PLUS:
-                str += "node_type: OPERATOR_PLUS\n";
-                break;
-            case OPERATOR_MINUS:
-                str += "node_type: OPERATOR_MINUS\n";
-                break;
-            case OPERATOR_MUL:
-                str += "node_type: OPERATOR_MUL\n";
-                break;
-            case OPERATOR_DIV:
-                str += "node_type: OPERATOR_DIV\n";
-                break;
-            case OPERATOR_SIN:
-                str += "node_type: OPERATOR_SIN\n";
-                break;
-            case OPERATOR_COS:
-                str += "node_type: OPERATOR_COS\n";
-                break;
-            default:
-                str += "ERROR!!!!!!!!!!!!!!\n";
-                break;
-        }
-        if (leftChild != null) {
-            str += "left_child";
-            str += leftChild.toString();
-        } else
-            str += "left_child is null\n";
+    str += "--------------------------------------------\n";
+    return str;
+  }
 
-        if (rightChild != null) {
-            str += "right_child";
-            str += rightChild.toString();
-        } else
-            str += "right_child is null\n";
+  public ASTNodeType getType() {
+    return type;
+  }
 
-        str += "--------------------------------------------\n";
-        return str;
-    }
+  public void setType(ASTNodeType type) {
+    this.type = type;
+  }
 
-    public ASTNodeType getType() {
-        return type;
-    }
+  public RoaringBitmap getValue() {
+    return value;
+  }
 
-    public void setType(ASTNodeType type) {
-        this.type = type;
-    }
+  public void setValue(RoaringBitmap value) {
+    this.value = value;
+  }
 
-    public double getValue() {
-        return value;
-    }
+  public ASTNode getLeftChild() {
+    return leftChild;
+  }
 
-    public void setValue(double value) {
-        this.value = value;
-    }
+  public void setLeftChild(ASTNode leftChild) {
+    this.leftChild = leftChild;
+  }
 
-    public ASTNode getLeftChild() {
-        return leftChild;
-    }
+  public ASTNode getRightChild() {
+    return rightChild;
+  }
 
-    public void setLeftChild(ASTNode leftChild) {
-        this.leftChild = leftChild;
-    }
-
-    public ASTNode getRightChild() {
-        return rightChild;
-    }
-
-    public void setRightChild(ASTNode rightChild) {
-        this.rightChild = rightChild;
-    }
+  public void setRightChild(ASTNode rightChild) {
+    this.rightChild = rightChild;
+  }
 }

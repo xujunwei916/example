@@ -39,8 +39,10 @@ public class TestHttp {
 //            Thread.sleep(1000);
 //        }
 
-        String response = HttpRequest.sendPost("http://10.16.100.0:9091/metrics/job/pushgateway1/instance/chd-node1", "test01 1000");
-        System.out.println(response);
+//        String response = HttpRequest.sendPost("http://10.16.100.0:9091/metrics/job/pushgateway1/instance/chd-node1", "test01 1000");
+//        System.out.println(response);
+
+        System.out.println( String.format("%d", 1));
 
 
 
